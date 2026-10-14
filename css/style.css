@@ -1,4 +1,14 @@
-@import url(./tokens.css);
+/* @import url(./tokens.css); */
+:root {
+  --grey-d: #111;
+  --grey-m: #444;
+  --grey-l: #999;
+  --white: #fff;
+  --color-correct: #6aaa64;
+  --color-present: #c9b458;
+  --color-absent: #787c7e;
+}
+
 *,
 *::after,
 *::before {
@@ -10,11 +20,66 @@
   padding: 0;
 }
 
+html {
+  max-height: 100%;
+  overflow: hidden;
+}
+
 body {
-  margin-block: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  font-family: Huninn, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
   background-color: var(--grey-m);
+  color: var(--white);
+}
+
+h1 {
+  font-size: 1.4em;
+  color: aquamarine;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tile {
+  font-size: 2rem;
+  font-weight: 600;
+  width: 3rem;
+  aspect-ratio: 1;
+  border: 1px solid white;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--grey-l);
+}
+
+.tile.correct {
+  background-color: var(--color-correct);
+  color: white;
+}
+
+.tile.present {
+  background-color: var(--color-present);
+  color: white;
+}
+
+.tile.absent {
+  background-color: var(--color-absent);
+  color: white;
 }

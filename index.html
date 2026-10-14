@@ -3,24 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Huninn&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Bordle</title>
   </head>
   <body>
     <main class="main">
+      <nav><h1>BORDLE</h1></nav>
       <section class="board">
-        <div class="row">xxxxx</div>
-        <div class="row">xxxxx</div>
-        <div class="row">xxxxx</div>
-        <div class="row">xxxxx</div>
-        <div class="row">xxxxx</div>
-        <div class="row">xxxxx</div>
-      </section>
-      <section class="keyboard">
-        <div class="keyboard_row">azertyuiop</div>
-        <div class="keyboard_row">qsdfghjklm</div>
-        <div class="keyboard_row">wxcvbnXE</div>
+        <div class="row" data-row="0">
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+        </div>
+        <div class="row" data-row="1">
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+        </div>
+        <div class="row" data-row="2">
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+        </div>
+        <div class="row" data-row="3">
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+        </div>
+        <div class="row" data-row="4">
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+        </div>
+        <div class="row" data-row="5">
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+          <div class="tile" data-tile></div>
+        </div>
       </section>
     </main>
+    <script type="module" src="js/script.js"></script>
   </body>
 </html>
