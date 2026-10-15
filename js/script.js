@@ -3,18 +3,24 @@ import { MOTS } from "./words.js";
 let currentRow = 0;
 let currentTile = 0;
 
-// for debug TODO = random select a word from a list
+// pick a random word while filtering length === 5 and A-Z only
 let secret_world = pickRandomWorld();
 function pickRandomWorld() {
-  const randomIndex = Math.floor(Math.random() * MOTS.length);
-  console.log(MOTS[randomIndex]);
-  return MOTS[randomIndex].toUpperCase();
+  let word = "";
+  do {
+    const randomIndex = Math.floor(Math.random() * MOTS.length);
+    word = MOTS[randomIndex].toUpperCase();
+  } while (word.length !== 5 || !/^[A-Z]+$/.test(word));
+
+  // for debug OR cheat
+  console.log(word);
+  return word;
 }
 
 // get all rows
 const rows = document.querySelectorAll(".row");
 
-// return the tileS in the row currently being filled (guess)
+// return the tileS in the row currently being filled
 function getActiveRow() {
   return rows[currentRow];
 }
@@ -102,7 +108,13 @@ document.addEventListener("keydown", (event) => {
 
     evaluateGuess(guess);
 
-    // Move to the next row only if the guess is wronf
+    // Move to the next row only if the guess is wrong
+    moveToNextRow();
+  }
+});
+
+function moveToNextRow() {
+  setTimeout(() => {
     if (currentRow < rows.length - 1) {
       currentRow++;
       currentTile = 0;
@@ -110,9 +122,8 @@ document.addEventListener("keydown", (event) => {
       //   console.log("No more rows left");
       reset();
     }
-  }
-});
-
+  }, 500);
+}
 function reset() {
   rows.forEach((row) => {
     setTimeout(() => {

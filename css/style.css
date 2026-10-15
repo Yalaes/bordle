@@ -36,9 +36,10 @@ body {
 
 h1 {
   font-size: 1.4em;
-  color: aquamarine;
+  color: var(--color-correct);
   text-align: center;
   padding-bottom: 1rem;
+  text-shadow: 5px 5px 10px #222;
 }
 
 main {
